@@ -1,6 +1,6 @@
 import Entity from "./entity";
 
-export default class Pessoa extends Entity {
+export default class Person extends Entity {
     name: string;
     constructor(name: string) {
         super();

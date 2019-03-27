@@ -1,19 +1,17 @@
 import express from "express";
 import ContextStrategy from "../infra/strategy";
 import RepositoryMongoDb from "../infra/repositoryMongoDb";
-import Pessoa from "../domain/entities/Pessoa";
+import Person from "../domain/entities/Person";
 
-const server= express();
-
-server.get("/",(req, res)=>{
-    console.log("req", req.ip);    
-    res.send("OK");
+const server = express();
+server.listen(3000, async () => {
+    console.log(`[SERVER] Running at http://localhost:3000`);
 });
 
 const database = {
-    pessoa: new ContextStrategy(new RepositoryMongoDb<Pessoa>())
+    person: new ContextStrategy(new RepositoryMongoDb<Person>())
 };
 
-export  {
-    server , database
+export {
+    server, database
 };
