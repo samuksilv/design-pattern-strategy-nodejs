@@ -9,6 +9,5 @@ app.server.get('/teste', async (req, res) => {
     let r = await app.database.person.read();
     console.log(r);
     console.log(typeof (r));
-    (typeof (r) === Error) ? r
-    es.send("erro") : res.send(r);
+    (typeof (r) === Error) ? res.send("erro") : res.send(r);
 })
