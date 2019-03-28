@@ -6,8 +6,10 @@ app.server.get("/", async (req, res) => {
 });
 
 app.server.get('/teste', async (req, res) => {
-    let r = await app.database.person.read();
-    console.log(r);
-    console.log(typeof (r));
-    (typeof (r) === Error) ? res.send("erro") : res.send(r);
-})
+    try{
+        res.send(await app.database.person.read()); 
+    }catch(err){  
+        console.error(err);
+        res.send(err.stack);        
+    }
+});
