@@ -1,6 +1,6 @@
 import express from "express";
 import ContextStrategy from "../infra/strategy";
-import RepositoryMongoDb from "../infra/repositoryMongoDb";
+import RepositoryMongoDb from "../infra/db/repositories/repositoryMongoDb";
 import Person from "../domain/entities/Person";
 
 const server = express();

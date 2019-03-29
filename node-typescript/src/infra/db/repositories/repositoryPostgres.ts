@@ -1,6 +1,6 @@
-import IRepository from "../domain/interfaces/IRepository";
+import IRepository from "../../../domain/interfaces/IRepository";
 
-export default class RepositoryMongoDb<Entity> implements IRepository<Entity> {
+export default class RepositoryPostgres<Entity> implements IRepository<Entity> {
     create(item: Entity): Entity {
         throw new Error("Method not implemented.");
     }

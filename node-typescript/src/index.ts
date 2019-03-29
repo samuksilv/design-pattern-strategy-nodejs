@@ -1,12 +1,10 @@
 import * as App from './bootstrapper/server';
 import { Request, Response } from 'express';
+require("dotenv").config();
 
-App.server.get("/", async (req, res) => {
+App.server.get("/", async (req:Request, res: Response) => {
   console.log("req", req.ip);
   res.send("OK");
 });
 
-App.server.get('/teste', async (request:Request, response: Response)=>{  
-  response.send( App.database.person.read());
-})
 
