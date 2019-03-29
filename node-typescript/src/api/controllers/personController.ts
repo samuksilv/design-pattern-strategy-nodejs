@@ -29,3 +29,5 @@ route.delete("/person:id", (req: Request, res: Response) => {
     let response = App.database.person.delete( req.params.id);
     res.status(204).send();
 });
+
+App.server.use("/api", route);
